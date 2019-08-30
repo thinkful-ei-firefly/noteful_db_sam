@@ -28,6 +28,7 @@
     "nodemon": "^1.19.1",
     "pg": "^7.12.1",
     "postgrator-cli": "^3.1.0",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "xss": "^1.0.6"
   }
 }

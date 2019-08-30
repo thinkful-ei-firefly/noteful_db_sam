@@ -1,6 +1,7 @@
 require('dotenv').config();
+const { DB_URL } = require('./src/config')
 
 module.exports = {
   driver: 'pg',
-  connectionString: process.env.DB_URL
+  connectionString: DB_URL
 }

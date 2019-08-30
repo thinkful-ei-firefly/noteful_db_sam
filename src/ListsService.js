@@ -13,6 +13,13 @@ const ListsService = {
       .where({id: listId})
   },
 
+  addList(db, newList) {
+    return db
+      .insert(newList)
+      .into('lists')
+      .returning('*')
+  },
+
   deleteList(db, listId) {
     return db
       .delete()
