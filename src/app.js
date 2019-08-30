@@ -16,7 +16,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use('/lists', ListsRouter);
-app.use('/list', NotesRouter);
+app.use('/notes', NotesRouter);
 
 app.use(function errorHandler(error, req, res, next) {
   let response

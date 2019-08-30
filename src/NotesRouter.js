@@ -6,7 +6,7 @@ const NotesService = require('./NotesService');
 const bodyParser = express.json();
 const NotesRouter = express.Router();
 
-NotesRouter.route('/all/notes')
+NotesRouter.route('/')
   .get((req, res, next) => {
     NotesService.getAllNotes(req.app.get('db'))
       .then(response => {
@@ -16,7 +16,7 @@ NotesRouter.route('/all/notes')
   })
   
 
-  NotesRouter.route('/:listId/notes')
+  NotesRouter.route('/list/:listId')
     .get((req, res, next) => {
       id = req.params.listId;
       NotesService.getNotesByList(req.app.get('db'), id)
@@ -49,7 +49,7 @@ NotesRouter.route('/all/notes')
         .catch(next)
     })
 
-    NotesRouter.route('/:listId/note/:noteId')
+    NotesRouter.route('/:noteId')
     .get((req, res, next) => {
       const { noteId } = req.params
       NotesService.getNote(req.app.get('db'), noteId)
