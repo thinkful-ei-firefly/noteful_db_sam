@@ -1,6 +1,12 @@
 const NotesService = {
 
-  getNotes(db, listId) {
+  getAllNotes(db) {
+    return db
+      .select('*')
+      .from('notes')
+  },
+
+  getNotesByList(db, listId) {
     return db
       .select('*')
       .from('notes')

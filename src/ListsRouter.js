@@ -1,12 +1,10 @@
 const express = require('express');
-const bodyParser = express.json();
 const xss = require('xss');
 
 const ListsService = require('./ListsService')
 
+const bodyParser = express.json();
 const ListsRouter = express.Router();
-
-
 
 ListsRouter.route('/')
   .get((req, res, next) => {
