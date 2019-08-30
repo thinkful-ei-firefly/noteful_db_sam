@@ -13,6 +13,13 @@ const NotesService = {
       .where({list_id: listId})
   },
 
+  getNote(db, noteId) {
+    return db
+      .select('*')
+      .from('notes')
+      .where({id: noteId})
+  },
+
   addNote(db, newNote) {
     return db
       .insert(newNote)
