@@ -1,7 +1,8 @@
 require('dotenv').config();
-const { DB_URL } = require('./src/config')
+const { DATABASE_URL } = require('./src/config')
 
 module.exports = {
   driver: 'pg',
-  connectionString: DB_URL
+  connectionString: DATABASE_URL,
+  "ssl": !!process.env.SSL
 }
